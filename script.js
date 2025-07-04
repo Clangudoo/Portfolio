@@ -1,7 +1,7 @@
 // Animated Intro Text
 const introTexts = [
   "Hi, I'm Clarence Caluag",
-  "A Passionate Computer Science Student",
+  "A Computer Science Student",
 ];
 let introIndex = 0, charIndex = 0, isDeleting = false;
 const introEl = document.getElementById('intro-text');
@@ -152,6 +152,31 @@ function renderCarousel() {
       githubBtn.appendChild(githubText);
       card.appendChild(githubBtn);
     }
+    
+    // Add mobile navigation buttons
+    const mobileNavButtons = document.createElement('div');
+    mobileNavButtons.className = 'mobile-nav-buttons';
+    
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'carousel-btn left';
+    prevBtn.innerHTML = '<span class="arrow left-arrow"></span>';
+    prevBtn.onclick = (e) => {
+      e.stopPropagation();
+      slideTo(-1);
+    };
+    
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'carousel-btn right';
+    nextBtn.innerHTML = '<span class="arrow right-arrow"></span>';
+    nextBtn.onclick = (e) => {
+      e.stopPropagation();
+      slideTo(1);
+    };
+    
+    mobileNavButtons.appendChild(prevBtn);
+    mobileNavButtons.appendChild(nextBtn);
+    card.appendChild(mobileNavButtons);
+    
     carouselTrack.appendChild(card);
   });
 }
