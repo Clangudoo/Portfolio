@@ -1,7 +1,7 @@
 // Animated Intro Text
 const introTexts = [
-  "Hi, I'm Clarence Caluag",
-  "A Computer Science Student",
+  "Hi, I'm Clarence C.",
+  "It's a pleasure to meet you",
 ];
 let introIndex = 0, charIndex = 0, isDeleting = false;
 const introEl = document.getElementById('intro-text');
@@ -35,16 +35,23 @@ typeIntro();
 const projects = [
   {
     title: "SipAI Game",
-    desc: "Digital Filipino street game Sipa with AI opponent. Made with Godot, GDScript, and Q-learning (2025).",
+    desc: "Digital Filipino street game Sipa with AI opponent. All assets made with Aseprite, program created using Godot, GDScript, and Q-learning Algorithm (2025).",
     type: "video",
     src: "vid/Projects/SipAIGame_vid.mp4",
     github: "https://github.com/jehya/SipAI"
   },
   {
-    title: "Furpaws App",
-    desc: "Mobile app to post lost, found, or adoptable pets. Built with Firebase, Android Studio, and Java (2025).",
+    title: "AV Dept. Calendar System",
+    desc: "Developed a branded calendar management system for the Audio-Visual Department using HTML, CSS, JavaScript, PHP, and MySQL, with access limited only to authorized users (2025).",
     type: "video",
-    src: "vid/Projects/Furpaws_vid.mp4"
+    src: "vid/Projects/AVCalendar_vid.mp4",
+  },
+  {
+    title: "Planado PH",
+    desc: "Reproductive health management website with tracking tools. Built with PHP, CSS, HTML, JS, and MySQL (2025).",
+    type: "video",
+    src: "vid/Projects/PlanadoPH_vid.mp4",
+    github: "https://github.com/yana16-afk/Planado-PH"
   },
   {
     title: "LRT-RS",
@@ -54,11 +61,10 @@ const projects = [
     github: "https://github.com/avetillo/LRTRS"
   },
   {
-    title: "Planado PH",
-    desc: "Reproductive health management website with tracking tools. Built with PHP, CSS, HTML, JS, and MySQL (2025).",
+    title: "Furpaws App",
+    desc: "Mobile app to post lost, found, or adoptable pets. Built with Firebase, Android Studio, and Java (2025).",
     type: "video",
-    src: "vid/Projects/PlanadoPH_vid.mp4",
-    github: "https://github.com/yana16-afk/Planado-PH"
+    src: "vid/Projects/Furpaws_vid.mp4"
   },
   {
     title: "A* vs D* Algorithm",
