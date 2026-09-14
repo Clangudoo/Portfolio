@@ -1,165 +1,210 @@
 /* ==========================================================================
    Project data
-   Add a real project by copying one of these objects. Leave "src" empty
-   ("") to keep showing the dashed placeholder box; fill it in with a path
-   like "images/ad-campaign-01.jpg" once you have the real design saved
-   in an images folder next to this file. The "id" is used in the page
-   URL (work-detail.html?id=...), so keep it short and unique.
+   Add a real project by copying one of these objects. Each image/video
+   slot (cover, and each item in gallery) is an object like:
+
+     { src: "", type: "image", alt: "", tag: "Ad_01.jpg", size: "1200 x 900px" }
+
+   Leave "src" empty ("") to keep showing the dashed placeholder box.
+   For a photo or design file, fill "src" in with a path like
+   "images/ad-campaign-01.jpg". For a video, set "type": "video", point
+   "src" at a video file such as "videos/process-reel.mp4", and add a
+   "poster" path to an image shown before the video plays. Keep video
+   files reasonably small (an exported, compressed .mp4, not a raw
+   screen recording) so pages stay fast to load.
+
+   The "id" on each project is used in the page URL
+   (work-detail.html?id=...), so keep it short and unique.
    ========================================================================== */
 
 const PROJECTS = [
   {
     id: "ad-campaign-01",
-    title: "Project title",
+    title: "Spec Ads 1 - The Body Shop",
     category: "Creative ads",
     categoryFilter: "ads",
     client: "Client name",
     year: "2026",
     deliverables: "Static ad set, 4 sizes",
-    summary: "Short line on the brief and the outcome.",
     brief: "Describe the brief here: the problem the client brought to you, any constraints (platform, brand guidelines, timeline), and what success looked like for this project.",
     approach: "Explain the thinking behind the design decisions: layout, type, color, and how the piece was adapted across the sizes or formats it needed to run in.",
-    cover: { src: "", alt: "", tag: "Ad_Campaign_01.jpg", size: "1920 x 1080px" },
+    cover: { src: "Images/Creative_Ads_1.png", alt: "", tag: "Creative_Ads_1.png", size: "1920 x 1080px" },
     gallery: [
-      { src: "", alt: "", tag: "Detail_01.jpg", size: "1200 x 900px" },
-      { src: "", alt: "", tag: "Detail_02.jpg", size: "1200 x 900px" },
-      { src: "", alt: "", tag: "Detail_Wide.jpg", size: "2400 x 1000px", full: true }
-    ]
-  },
-  {
-    id: "email-series-01",
-    title: "Project title",
-    category: "Email design",
-    categoryFilter: "email",
-    client: "Client name",
-    year: "2026",
-    deliverables: "3-part email series",
-    summary: "Short line on the brief and the outcome.",
-    brief: "Describe the brief here: who the audience was, what the emails needed to communicate, and any platform constraints (Klaviyo, Mailchimp, and so on).",
-    approach: "Explain the layout and type decisions, and how the design was tested to hold up across inbox clients and screen widths.",
-    cover: { src: "Images/Email 2.png", alt: "", tag: "Email_Series_01.jpg", size: "1200 x 1600px" },
-    gallery: [
-      { src: "Images/Email 2.png", alt: "", tag: "Email 2.png", size: "1200 x 900px" },
-      { src: "", alt: "", tag: "Email_Detail_02.jpg", size: "1200 x 900px" }
-    ]
-  },
-  {
-    id: "site-ui-01",
-    title: "Project title",
-    category: "Website UI",
-    categoryFilter: "ui",
-    client: "Client name",
-    year: "2026",
-    deliverables: "5 page templates",
-    summary: "Short line on the brief and the outcome.",
-    brief: "Describe the brief here: the product or site, who it's for, and what the interface needed to solve.",
-    approach: "Explain the layout system, component choices, and how screens were prepared for handoff to a developer.",
-    cover: { src: "", alt: "", tag: "Site_UI_01.jpg", size: "1600 x 1000px" },
-    gallery: [
-      { src: "", alt: "", tag: "UI_Detail_01.jpg", size: "1200 x 900px" },
-      { src: "", alt: "", tag: "UI_Detail_02.jpg", size: "1200 x 900px" },
-      { src: "", alt: "", tag: "UI_Full_Page.jpg", size: "2400 x 1200px", full: true }
+      { src: "Images/Creative_Ads_1.png", alt: "", tag: "Creative_Ads_1.png", size: "1200 x 900px" },
     ]
   },
   {
     id: "ad-campaign-02",
-    title: "Project title",
+    title: "Spec Ads 2 - The Body Shop",
     category: "Creative ads",
     categoryFilter: "ads",
     client: "Client name",
     year: "2026",
     deliverables: "Static ad set, 3 sizes",
-    summary: "Short line on the brief and the outcome.",
     brief: "Describe the brief here.",
     approach: "Explain the thinking behind the design decisions.",
-    cover: { src: "", alt: "", tag: "Ad_Campaign_02.jpg", size: "1080 x 1350px" },
+    cover: { src: "Images/Creative_Ads_2.png", alt: "", tag: "Ad_Campaign_02.jpg", size: "1080 x 1350px" },
     gallery: [
-      { src: "", alt: "", tag: "Detail_01.jpg", size: "1200 x 900px" },
-      { src: "", alt: "", tag: "Detail_02.jpg", size: "1200 x 900px" }
-    ]
-  },
-  {
-    id: "site-ui-02",
-    title: "Project title",
-    category: "Website UI",
-    categoryFilter: "ui",
-    client: "Client name",
-    year: "2026",
-    deliverables: "Landing page",
-    summary: "Short line on the brief and the outcome.",
-    brief: "Describe the brief here.",
-    approach: "Explain the thinking behind the design decisions.",
-    cover: { src: "", alt: "", tag: "Site_UI_02.jpg", size: "1600 x 1000px" },
-    gallery: [
-      { src: "", alt: "", tag: "UI_Detail_01.jpg", size: "1200 x 900px" },
-      { src: "", alt: "", tag: "UI_Detail_02.jpg", size: "1200 x 900px" }
-    ]
-  },
-  {
-    id: "email-series-02",
-    title: "Project title",
-    category: "Email design",
-    categoryFilter: "email",
-    client: "Client name",
-    year: "2026",
-    deliverables: "Newsletter template",
-    summary: "Short line on the brief and the outcome.",
-    brief: "Describe the brief here.",
-    approach: "Explain the thinking behind the design decisions.",
-    cover: { src: "", alt: "", tag: "Email_Series_02.jpg", size: "1200 x 1600px" },
-    gallery: [
-      { src: "", alt: "", tag: "Email_Detail_01.jpg", size: "1200 x 900px" },
-      { src: "", alt: "", tag: "Email_Detail_02.jpg", size: "1200 x 900px" }
+      { src: "Images/Creative_Ads_2.png", alt: "", tag: "Detail_01.jpg", size: "1200 x 900px" },
     ]
   },
   {
     id: "ad-campaign-03",
-    title: "Project title",
+    title: "Spec Ads 3 - The Body Shop",
     category: "Creative ads",
     categoryFilter: "ads",
     client: "Client name",
     year: "2026",
     deliverables: "Static ad set, 4 sizes",
-    summary: "Short line on the brief and the outcome.",
     brief: "Describe the brief here.",
     approach: "Explain the thinking behind the design decisions.",
-    cover: { src: "", alt: "", tag: "Ad_Campaign_03.jpg", size: "1080 x 1080px" },
+    cover: { src: "Images/Creative_Ads_3.png", alt: "", tag: "Ad_Campaign_03.jpg", size: "1080 x 1080px" },
     gallery: [
-      { src: "", alt: "", tag: "Detail_01.jpg", size: "1200 x 900px" },
+      { src: "Images/Creative_Ads_3.png", alt: "", tag: "Detail_01.jpg", size: "1200 x 900px" },
+      { src: "", alt: "", tag: "Detail_02.jpg", size: "1200 x 900px" }
+    ]
+  },
+    {
+    id: "ad-campaign-04",
+    title: "Spec Ads 4 - Vaebo",
+    category: "Creative ads",
+    categoryFilter: "ads",
+    client: "Client name",
+    year: "2026",
+    deliverables: "Static ad set, 4 sizes",
+    brief: "Describe the brief here.",
+    approach: "Explain the thinking behind the design decisions.",
+    cover: { src: "Images/Creative_Ads_4.png", alt: "", tag: "Ad_Campaign_03.jpg", size: "1080 x 1080px" },
+    gallery: [
+      { src: "Images/Creative_Ads_4.png", alt: "", tag: "Detail_01.jpg", size: "1200 x 900px" },
+      { src: "", alt: "", tag: "Detail_02.jpg", size: "1200 x 900px" }
+    ]
+  },
+    {
+    id: "ad-campaign-05",
+    title: "Spec Ads 5 - Dermalogica",
+    category: "Creative ads",
+    categoryFilter: "ads",
+    client: "Client name",
+    year: "2026",
+    deliverables: "Static ad set, 4 sizes",
+    brief: "Describe the brief here.",
+    approach: "Explain the thinking behind the design decisions.",
+    cover: { src: "Images/Creative_Ads_5.png", alt: "", tag: "Ad_Campaign_03.jpg", size: "1080 x 1080px" },
+    gallery: [
+      { src: "Images/Creative_Ads_5.png", alt: "", tag: "Detail_01.jpg", size: "1200 x 900px" },
+      { src: "", alt: "", tag: "Detail_02.jpg", size: "1200 x 900px" }
+    ]
+  },
+    {
+    id: "ad-campaign-06",
+    title: "Spec Ads 6 - The Body Shop",
+    category: "Creative ads",
+    categoryFilter: "ads",
+    client: "Client name",
+    year: "2026",
+    deliverables: "Static ad set, 4 sizes",
+    brief: "Describe the brief here.",
+    approach: "Explain the thinking behind the design decisions.",
+    cover: { src: "Images/Creative_Ads_6.png", alt: "", tag: "Ad_Campaign_03.jpg", size: "1080 x 1080px" },
+    gallery: [
+      { src: "Images/Creative_Ads_6.png", alt: "", tag: "Detail_01.jpg", size: "1200 x 900px" },
+      { src: "", alt: "", tag: "Detail_02.jpg", size: "1200 x 900px" }
+    ]
+  },
+    {
+    id: "ad-campaign-07",
+    title: "Spec Ads 7 - Bearpaw",
+    category: "Creative ads",
+    categoryFilter: "ads",
+    client: "Client name",
+    year: "2026",
+    deliverables: "Static ad set, 4 sizes",
+    brief: "Describe the brief here.",
+    approach: "Explain the thinking behind the design decisions.",
+    cover: { src: "Images/Creative_Ads_7.png", alt: "", tag: "Ad_Campaign_03.jpg", size: "1080 x 1080px" },
+    gallery: [
+      { src: "Images/Creative_Ads_7.png", alt: "", tag: "Detail_01.jpg", size: "1200 x 900px" },
+      { src: "", alt: "", tag: "Detail_02.jpg", size: "1200 x 900px" }
+    ]
+  },
+    {
+    id: "ad-campaign-08",
+    title: "Spec Ads 8 - Bearpaw",
+    category: "Creative ads",
+    categoryFilter: "ads",
+    client: "Client name",
+    year: "2026",
+    deliverables: "Static ad set, 4 sizes",
+    brief: "Describe the brief here.",
+    approach: "Explain the thinking behind the design decisions.",
+    cover: { src: "Images/Creative_Ads_8.png", alt: "", tag: "Ad_Campaign_03.jpg", size: "1080 x 1080px" },
+    gallery: [
+      { src: "Images/Creative_Ads_8.png", alt: "", tag: "Detail_01.jpg", size: "1200 x 900px" },
       { src: "", alt: "", tag: "Detail_02.jpg", size: "1200 x 900px" }
     ]
   },
   {
-    id: "site-ui-03",
-    title: "Project title",
-    category: "Website UI",
-    categoryFilter: "ui",
-    client: "Client name",
-    year: "2026",
-    deliverables: "App screens",
-    summary: "Short line on the brief and the outcome.",
-    brief: "Describe the brief here.",
-    approach: "Explain the thinking behind the design decisions.",
-    cover: { src: "", alt: "", tag: "Site_UI_03.jpg", size: "1600 x 1000px" },
-    gallery: [
-      { src: "", alt: "", tag: "UI_Detail_01.jpg", size: "1200 x 900px" },
-      { src: "", alt: "", tag: "UI_Detail_02.jpg", size: "1200 x 900px" }
-    ]
-  },
-  {
-    id: "email-series-03",
-    title: "Project title",
+    id: "email-series-01",
+    title: "Spec Email 1 - The Body Shop",
     category: "Email design",
     categoryFilter: "email",
     client: "Client name",
     year: "2026",
-    deliverables: "Welcome series",
-    summary: "Short line on the brief and the outcome.",
-    brief: "Describe the brief here.",
-    approach: "Explain the thinking behind the design decisions.",
-    cover: { src: "", alt: "", tag: "Email_Series_03.jpg", size: "1200 x 1600px" },
+    deliverables: "3-part email series",
+    brief: "Describe the brief here: who the audience was, what the emails needed to communicate, and any platform constraints (Klaviyo, Mailchimp, and so on).",
+    approach: "Explain the layout and type decisions, and how the design was tested to hold up across inbox clients and screen widths.",
+    cover: { src: "Images/Email 2.png", alt: "", tag: "Email_Series_01.jpg", size: "1200 x 1600px" },
     gallery: [
-      { src: "", alt: "", tag: "Email_Detail_01.jpg", size: "1200 x 900px" },
+      { src: "Images/Email 2.png", alt: "", tag: "Email_Detail_01.jpg", size: "1200 x 900px" },
+      { src: "", alt: "", tag: "Email_Detail_02.jpg", size: "1200 x 900px" }
+    ]
+  },
+  {
+    id: "email-series-02",
+    title: "Spec Email 2 - The Body Shop",
+    category: "Email design",
+    categoryFilter: "email",
+    client: "Client name",
+    year: "2026",
+    deliverables: "3-part email series",
+    brief: "Describe the brief here: who the audience was, what the emails needed to communicate, and any platform constraints (Klaviyo, Mailchimp, and so on).",
+    approach: "Explain the layout and type decisions, and how the design was tested to hold up across inbox clients and screen widths.",
+    cover: { src: "Images/Email 3.png", alt: "", tag: "Email_Series_01.jpg", size: "1200 x 1600px" },
+    gallery: [
+      { src: "Images/Email 3.png", alt: "", tag: "Email_Detail_01.jpg", size: "1200 x 900px" },
+      { src: "", alt: "", tag: "Email_Detail_02.jpg", size: "1200 x 900px" }
+    ]
+  },
+    {
+    id: "email-series-03",
+    title: "Spec Email 3 - Onnit",
+    category: "Email design",
+    categoryFilter: "email",
+    client: "Client name",
+    year: "2026",
+    deliverables: "3-part email series",
+    brief: "Describe the brief here: who the audience was, what the emails needed to communicate, and any platform constraints (Klaviyo, Mailchimp, and so on).",
+    approach: "Explain the layout and type decisions, and how the design was tested to hold up across inbox clients and screen widths.",
+    cover: { src: "Images/Email 4.png", alt: "", tag: "Email_Series_01.jpg", size: "1200 x 1600px" },
+    gallery: [
+      { src: "Images/Email 4.png", alt: "", tag: "Email_Detail_01.jpg", size: "1200 x 900px" },
+      { src: "", alt: "", tag: "Email_Detail_02.jpg", size: "1200 x 900px" }
+    ]
+  },
+      {
+    id: "email-series-04",
+    title: "Spec Email 4 - Bearpaw",
+    category: "Email design",
+    categoryFilter: "email",
+    client: "Client name",
+    year: "2026",
+    deliverables: "3-part email series",
+    brief: "Describe the brief here: who the audience was, what the emails needed to communicate, and any platform constraints (Klaviyo, Mailchimp, and so on).",
+    approach: "Explain the layout and type decisions, and how the design was tested to hold up across inbox clients and screen widths.",
+    cover: { src: "Images/Email 5.png", alt: "", tag: "Email_Series_01.jpg", size: "1200 x 1600px" },
+    gallery: [
+      { src: "Images/Email 5.png", alt: "", tag: "Email_Detail_01.jpg", size: "1200 x 900px" },
       { src: "", alt: "", tag: "Email_Detail_02.jpg", size: "1200 x 900px" }
     ]
   }
@@ -172,16 +217,35 @@ const FEATURED_PROJECT_IDS = ["ad-campaign-01", "email-series-01", "site-ui-01",
    Shared render helpers
    ========================================================================== */
 
-/* Builds one .artboard element: a real image if image.src is filled in,
-   otherwise the dashed placeholder box. Pass zoomable = true to make a
-   real image open the large, click-to-zoom view (used on the detail
-   page); leave it false/omitted for cards that should navigate instead
-   (used on the works grid and homepage featured work). */
+/* Builds one .artboard element:
+   - a real <img> if image.src is filled in and type is "image" (default)
+   - a real <video> if image.src is filled in and type is "video"
+   - the dashed placeholder box otherwise
+   Pass zoomable = true for the detail page, where a video gets visible
+   controls and an image opens the large click-to-zoom view. Leave it
+   false/omitted for cards that should navigate instead (works grid,
+   homepage featured work): there a video plays a silent preview on
+   hover instead of showing controls. */
 function buildArtboard(image, extraClass, zoomable) {
   var div = document.createElement("div");
   div.className = "artboard" + (extraClass ? " " + extraClass : "") + (zoomable ? " is-zoomable" : "");
 
-  if (image && image.src) {
+  if (image && image.src && image.type === "video") {
+    var video = document.createElement("video");
+    video.src = image.src;
+    if (image.poster) video.poster = image.poster;
+    video.setAttribute("playsinline", "");
+    video.muted = true;
+    video.loop = true;
+    video.preload = "metadata";
+    if (zoomable) {
+      video.controls = true;
+      video.className = "video-full";
+    } else {
+      video.className = "video-preview";
+    }
+    div.appendChild(video);
+  } else if (image && image.src) {
     var img = document.createElement("img");
     img.src = image.src;
     img.alt = image.alt || "";
@@ -192,9 +256,10 @@ function buildArtboard(image, extraClass, zoomable) {
     tag.className = "artboard-tag";
     tag.textContent = (image && image.tag) || "image.jpg";
 
+    var kind = image && image.type === "video" ? "video" : "design";
     var label = document.createElement("div");
     label.className = "artboard-label";
-    label.innerHTML = "<strong>Insert design here</strong>" + ((image && image.size) || "");
+    label.innerHTML = "<strong>Insert " + kind + " here</strong>" + ((image && image.size) || "");
 
     div.appendChild(tag);
     div.appendChild(label);

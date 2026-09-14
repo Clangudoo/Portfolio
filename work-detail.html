@@ -14,7 +14,7 @@
 
 <header class="site-header">
   <div class="container">
-    <a href="index.html" class="brand">Your<span>Name</span></a>
+    <a href="index.html" class="brand">CLANG</a>
     <nav aria-label="Primary">
       <ul class="nav-list">
         <li><a href="index.html">Home</a></li>
@@ -70,29 +70,15 @@
   html += '<section class="tight"><div class="container detail-hero">';
   html += '<p class="tag">' + project.category + '</p>';
   html += '<h1 style="font-size:var(--step-3); margin-top:18px; max-width:20ch;">' + project.title + '</h1>';
-  html += '<p style="font-size:var(--step-0); max-width:60ch;">' + project.summary + '</p>';
   html += '<div class="detail-meta-row">';
-  html += '<div><p class="label">Client</p><p class="value">' + project.client + '</p></div>';
   html += '<div><p class="label">Category</p><p class="value">' + project.category + '</p></div>';
   html += '<div><p class="label">Year</p><p class="value">' + project.year + '</p></div>';
-  html += '<div><p class="label">Deliverables</p><p class="value">' + project.deliverables + '</p></div>';
   html += '</div>';
   html += '<div class="detail-cover-slot"></div>';
   html += '</div></section>';
 
-  html += '<section style="padding:0;"><div class="container detail-body">';
-  html += '<div><h2>Brief</h2><p>' + project.brief + '</p></div>';
-  html += '<div><h2>Approach</h2><p>' + project.approach + '</p></div>';
-  html += '</div></section>';
-
-  html += '<section><div class="container">';
-  html += '<div class="section-head"><h2>Final design</h2></div>';
-  html += '<div class="detail-gallery" id="detail-gallery"></div>';
-  html += '</div></section>';
-
   html += '<div class="container"><div class="next-project">';
   html += '<div><p class="label">More work</p><a href="works.html"><h3>Back to all work</h3></a></div>';
-  html += '<a href="works.html" class="btn btn-secondary">View works</a>';
   html += '</div></div>';
 
   root.innerHTML = html;

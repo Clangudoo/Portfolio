@@ -15,7 +15,7 @@
   --border-blue: #26407A;
 
   /* type */
-  --font-head: "Space Grotesk", "Arial Narrow", sans-serif;
+  --font-head: "Poppins", "Arial Narrow", sans-serif;
   --font-body: "Work Sans", "Segoe UI", sans-serif;
 
   /* scale */
@@ -486,6 +486,33 @@ section.tight { padding: 64px 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+/* Real video dropped into an artboard: fill the frame the same way */
+.artboard video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+/* Grid-card preview video: no controls, muted, only plays on hover
+   (see script.js). Full video (detail page) keeps native controls. */
+.video-preview { pointer-events: none; }
+.video-full { background: #000; }
+
+/* Hover preview: subtle zoom on the thumbnail, and it's the same
+   hover that starts a preview video playing (handled in script.js). */
+.work-card:hover .artboard img,
+.work-card:hover .artboard video {
+  transform: scale(1.045);
+}
+@media (prefers-reduced-motion: reduce) {
+  .artboard img, .artboard video { transition: none; }
+  .work-card:hover .artboard img,
+  .work-card:hover .artboard video { transform: none; }
 }
 
 /* Only images marked zoomable (the detail page) hint that clicking opens
@@ -695,7 +722,6 @@ section.tight { padding: 64px 0; }
 .detail-cover.is-panning { cursor: grabbing; }
 
 .detail-cover.is-zoomable img {
-  width: 160%;
   max-width: none;
   height: auto;
   object-fit: initial;

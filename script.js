@@ -19,6 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
      will not also pop open the lightbox below.
      ------------------------------------------------------------------ */
   document.querySelectorAll(".detail-cover").forEach(function (cover) {
+    var coverImg = cover.querySelector("img");
+    if (!coverImg) return; // video covers use native controls, no panning needed
+
     var isDown = false;
     var dragged = false;
     var startX, startY, scrollLeft, scrollTop;
@@ -26,13 +29,10 @@ document.addEventListener("DOMContentLoaded", function () {
     cover.scrollTop = 0;
     cover.scrollLeft = 0;
 
-    var coverImg = cover.querySelector("img");
-    if (coverImg) {
-      coverImg.addEventListener("load", function () {
-        cover.scrollTop = 0;
-        cover.scrollLeft = 0;
-      });
-    }
+    coverImg.addEventListener("load", function () {
+      cover.scrollTop = 0;
+      cover.scrollLeft = 0;
+    });
 
     cover.addEventListener("mousedown", function (e) {
       isDown = true;
@@ -64,6 +64,36 @@ document.addEventListener("DOMContentLoaded", function () {
         dragged = false;
       }
     });
+  });
+
+  /* ------------------------------------------------------------------
+     Hover preview: on the works grid and homepage featured work, a
+     project's preview video plays muted on hover and resets to its
+     poster frame when the pointer leaves. Images already get a hover
+     zoom purely through CSS, no script needed there.
+     ------------------------------------------------------------------ */
+  document.querySelectorAll("video.video-preview").forEach(function (video) {
+    var card = video.closest(".work-card") || video.parentElement;
+    if (!card) return;
+
+    card.addEventListener("mouseenter", function () {
+      video.currentTime = 0;
+      var playPromise = video.play();
+      if (playPromise && playPromise.catch) playPromise.catch(function () {});
+    });
+
+    card.addEventListener("mouseleave", function () {
+      video.pause();
+      video.currentTime = 0;
+    });
+
+    /* Touch devices: fall back to a tap-and-hold style toggle so the
+       preview is still reachable without a hover state. */
+    card.addEventListener("touchstart", function () {
+      video.currentTime = 0;
+      var playPromise = video.play();
+      if (playPromise && playPromise.catch) playPromise.catch(function () {});
+    }, { passive: true });
   });
 
   /* ------------------------------------------------------------------
