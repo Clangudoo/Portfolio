@@ -15,7 +15,7 @@
   --border-blue: #26407A;
 
   /* type */
-  --font-head: "Poppins", "Arial Narrow", sans-serif;
+  --font-head: "Space Grotesk", "Arial Narrow", sans-serif;
   --font-body: "Work Sans", "Segoe UI", sans-serif;
 
   /* scale */
@@ -722,6 +722,7 @@ section.tight { padding: 64px 0; }
 .detail-cover.is-panning { cursor: grabbing; }
 
 .detail-cover.is-zoomable img {
+  width: 160%;
   max-width: none;
   height: auto;
   object-fit: initial;
@@ -731,6 +732,7 @@ section.tight { padding: 64px 0; }
   user-select: none;
 }
 .detail-cover.is-panning img { cursor: grabbing; }
+.detail-cover video { cursor: default; }
 
 .detail-body {
   display: grid;

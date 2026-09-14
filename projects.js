@@ -145,22 +145,6 @@ const PROJECTS = [
     ]
   },
   {
-    id: "email-series-01",
-    title: "Spec Email 1 - The Body Shop",
-    category: "Email design",
-    categoryFilter: "email",
-    client: "Client name",
-    year: "2026",
-    deliverables: "3-part email series",
-    brief: "Describe the brief here: who the audience was, what the emails needed to communicate, and any platform constraints (Klaviyo, Mailchimp, and so on).",
-    approach: "Explain the layout and type decisions, and how the design was tested to hold up across inbox clients and screen widths.",
-    cover: { src: "Images/Email 2.png", alt: "", tag: "Email_Series_01.jpg", size: "1200 x 1600px" },
-    gallery: [
-      { src: "Images/Email 2.png", alt: "", tag: "Email_Detail_01.jpg", size: "1200 x 900px" },
-      { src: "", alt: "", tag: "Email_Detail_02.jpg", size: "1200 x 900px" }
-    ]
-  },
-  {
     id: "email-series-02",
     title: "Spec Email 2 - The Body Shop",
     category: "Email design",
@@ -206,6 +190,81 @@ const PROJECTS = [
     gallery: [
       { src: "Images/Email 5.png", alt: "", tag: "Email_Detail_01.jpg", size: "1200 x 900px" },
       { src: "", alt: "", tag: "Email_Detail_02.jpg", size: "1200 x 900px" }
+    ]
+  },
+  {
+    id: "site-ui-01",
+    title: "Audio-Visual Department Calendar",
+    category: "Email design",
+    categoryFilter: "email",
+    client: "Client name",
+    year: "2026",
+    deliverables: "3-part email series",
+    brief: "Describe the brief here: who the audience was, what the emails needed to communicate, and any platform constraints (Klaviyo, Mailchimp, and so on).",
+    approach: "Explain the layout and type decisions, and how the design was tested to hold up across inbox clients and screen widths.",
+    cover: { src: "vid/Projects/AVCalendar_vid.mp4", type: "video", alt: "", tag: "Email_Series_01.jpg", size: "1200 x 1600px" },
+    gallery: [
+      { src: "vid/Projects/AVCalendar_vid.mp4", type: "video", poster: "", alt: "", tag: "Process_Reel.mp4", size: "1920 x 1080px, MP4", full: true }
+    ]
+  },
+  {
+    id: "site-ui-02",
+    title: "LRTRS - LRT tracker",
+    category: "Email design",
+    categoryFilter: "email",
+    client: "Client name",
+    year: "2026",
+    deliverables: "3-part email series",
+    brief: "Describe the brief here: who the audience was, what the emails needed to communicate, and any platform constraints (Klaviyo, Mailchimp, and so on).",
+    approach: "Explain the layout and type decisions, and how the design was tested to hold up across inbox clients and screen widths.",
+    cover: { src: "vid/Projects/LRTRS_vid.mp4", type: "video", alt: "", tag: "Email_Series_01.jpg", size: "1200 x 1600px" },
+    gallery: [
+      { src: "vid/Projects/LRTRS_vid.mp4", type: "video", poster: "", alt: "", tag: "Process_Reel.mp4", size: "1920 x 1080px, MP4", full: true }
+    ]
+  },
+  {
+    id: "site-ui-03",
+    title: "Sipa AI Game",
+    category: "Email design",
+    categoryFilter: "email",
+    client: "Client name",
+    year: "2026",
+    deliverables: "3-part email series",
+    brief: "Describe the brief here: who the audience was, what the emails needed to communicate, and any platform constraints (Klaviyo, Mailchimp, and so on).",
+    approach: "Explain the layout and type decisions, and how the design was tested to hold up across inbox clients and screen widths.",
+    cover: { src: "vid/Projects/SipAIGame_vid.mp4", type: "video", alt: "", tag: "Email_Series_01.jpg", size: "1200 x 1600px" },
+    gallery: [
+      { src: "vid/Projects/SipAIGame_vid.mp4", type: "video", poster: "", alt: "", tag: "Process_Reel.mp4", size: "1920 x 1080px, MP4", full: true }
+    ]
+  },
+  {
+    id: "site-ui-04",
+    title: "2d Head Animation",
+    category: "Email design",
+    categoryFilter: "email",
+    client: "Client name",
+    year: "2026",
+    deliverables: "3-part email series",
+    brief: "Describe the brief here: who the audience was, what the emails needed to communicate, and any platform constraints (Klaviyo, Mailchimp, and so on).",
+    approach: "Explain the layout and type decisions, and how the design was tested to hold up across inbox clients and screen widths.",
+    cover: { src: "vid/Extracurriculars/Extra3_vid.mp4", type: "video", alt: "", tag: "Email_Series_01.jpg", size: "1200 x 1600px" },
+    gallery: [
+      { src: "vid/Extracurriculars/Extra3_vid.mp4", type: "video", poster: "", alt: "", tag: "Process_Reel.mp4", size: "1920 x 1080px, MP4", full: true }
+    ]
+  },
+  {
+    id: "site-ui-05",
+    title: "Trangkaso Facebook Carousel Post",
+    category: "Email design",
+    categoryFilter: "email",
+    client: "Client name",
+    year: "2026",
+    deliverables: "3-part email series",
+    brief: "Describe the brief here: who the audience was, what the emails needed to communicate, and any platform constraints (Klaviyo, Mailchimp, and so on).",
+    approach: "Explain the layout and type decisions, and how the design was tested to hold up across inbox clients and screen widths.",
+    cover: { src: "vid/Extracurriculars/Extra1_img.png", alt: "", tag: "Email_Series_01.jpg", size: "1500 x 1500px" },
+    gallery: [
+      { src: "vid/Extracurriculars/Extra1_img.png", poster: "", alt: "", tag: "Process_Reel.mp4", size: "1500 x 1500px, MP4", full: true }
     ]
   }
 ];
