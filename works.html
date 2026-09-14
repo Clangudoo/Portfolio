@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Works | Your Name, Graphic Designer</title>
+<meta name="description" content="Portfolio of creative ads, email design, and website UI work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">Your<span>Name</span></a>
+    <nav aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="works.html" aria-current="page">Works</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="tight">
+    <div class="container">
+      <div class="section-head">
+        <h2>Works</h2>
+      </div>
+      <p style="max-width:60ch; margin-bottom: 8px;">A collection of creative ads, email design, and website UI. Click any project to open its case study, where you can view the full design and zoom in.</p>
+    </div>
+  </section>
+
+  <section class="tight" style="padding-top:0;">
+    <div class="container">
+      <div class="filter-row" role="group" aria-label="Filter work by category">
+        <button class="filter-btn is-active" data-filter="all">All work</button>
+        <button class="filter-btn" data-filter="ads">Creative ads</button>
+        <button class="filter-btn" data-filter="email">Email design</button>
+        <button class="filter-btn" data-filter="ui">Website UI</button>
+      </div>
+
+      <div class="work-grid dense" id="work-grid">
+        <!-- Filled in by script below from PROJECTS -->
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <p>&copy; 2026 Your Name. All work shown is original design.</p>
+    <ul class="footer-links">
+      <li><a href="about.html#contact">Contact</a></li>
+      <li><a href="works.html">Works</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="projects.js"></script>
+<script src="script.js"></script>
+<script>
+(function () {
+  var grid = document.getElementById("work-grid");
+
+  PROJECTS.forEach(function (project) {
+    var card = document.createElement("a");
+    card.href = "work-detail.html?id=" + encodeURIComponent(project.id);
+    card.className = "work-card work-item";
+    card.setAttribute("data-category", project.categoryFilter);
+
+    card.appendChild(buildArtboard(project.cover));
+
+    var meta = document.createElement("div");
+    meta.className = "work-card-meta";
+    meta.innerHTML = "<h3>" + project.title + "</h3><span class=\"work-cat\">" + project.category + "</span>";
+    card.appendChild(meta);
+
+    var summary = document.createElement("p");
+    summary.textContent = project.summary;
+    card.appendChild(summary);
+
+    grid.appendChild(card);
+  });
+})();
+</script>
+</body>
+</html>

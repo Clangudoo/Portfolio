@@ -1,285 +1,154 @@
-// Animated Intro Text
-const introTexts = [
-  "Hi, I'm Clarence C.",
-  "It's a pleasure to meet you",
-];
-let introIndex = 0, charIndex = 0, isDeleting = false;
-const introEl = document.getElementById('intro-text');
+document.addEventListener("DOMContentLoaded", function () {
 
-function typeIntro() {
-  const current = introTexts[introIndex];
-  if (isDeleting) {
-    charIndex--;
-    introEl.textContent = current.substring(0, charIndex);
-    if (charIndex === 0) {
-      isDeleting = false;
-      introIndex = (introIndex + 1) % introTexts.length;
-      setTimeout(typeIntro, 600);
-    } else {
-      setTimeout(typeIntro, 40);
-    }
-  } else {
-    charIndex++;
-    introEl.textContent = current.substring(0, charIndex);
-    if (charIndex === current.length) {
-      isDeleting = true;
-      setTimeout(typeIntro, 1200);
-    } else {
-      setTimeout(typeIntro, 80);
-    }
-  }
-}
-typeIntro();
+  /* Mobile nav toggle */
+  var toggle = document.querySelector(".nav-toggle");
+  var nav = document.querySelector(".nav-list");
 
-// Project data for carousel
-const projects = [
-  {
-    title: "SipAI Game",
-    desc: "Digital Filipino street game Sipa with AI opponent. All assets made with Aseprite, program created using Godot, GDScript, and Q-learning Algorithm (2025).",
-    type: "video",
-    src: "vid/Projects/SipAIGame_vid.mp4",
-    github: "https://github.com/jehya/SipAI"
-  },
-  {
-    title: "AV Dept. Calendar System",
-    desc: "Developed a branded calendar management system for the Audio-Visual Department using HTML, CSS, JavaScript, PHP, and MySQL, with access limited only to authorized users (2025).",
-    type: "video",
-    src: "vid/Projects/AVCalendar_vid.mp4",
-  },
-  {
-    title: "Planado PH",
-    desc: "Reproductive health management website with tracking tools. Built with PHP, CSS, HTML, JS, and MySQL (2025).",
-    type: "video",
-    src: "vid/Projects/PlanadoPH_vid.mp4",
-    github: "https://github.com/yana16-afk/Planado-PH"
-  },
-  {
-    title: "LRT-RS",
-    desc: "Web app to track LRT trains, stations, and destinations. Built with HTML, CSS, and JavaScript (2025).",
-    type: "video",
-    src: "vid/Projects/LRTRS_vid.mp4",
-    github: "https://github.com/avetillo/LRTRS"
-  },
-  {
-    title: "Furpaws App",
-    desc: "Mobile app to post lost, found, or adoptable pets. Built with Firebase, Android Studio, and Java (2025).",
-    type: "video",
-    src: "vid/Projects/Furpaws_vid.mp4"
-  },
-  {
-    title: "A* vs D* Algorithm",
-    desc: "Simulation comparing A* and D*-Lite for dynamic obstacles in a grid terrain generated with Perlin noise. The dynamic obstacle uses LCG. Made with Python.",
-    type: "video",
-    src: "vid/Projects/pathfinding_vid.mp4",
-    github: "https://github.com/jehya/EA-SACTDE-ATBPPA-Tool"
-  },
-  {
-    title: "ND Calculator",
-    desc: "Nutrition and dietetics calculator website. Built with HTML, CSS, and JS (2024).",
-    type: "video",
-    src: "vid/Projects/NDCalculator_vid.mp4",
-    github: "https://clangudoo.github.io/NDCalculator/"
-  }
-];
-
-const carouselTrack = document.getElementById('carouselTrack');
-let focusIndex = 0;
-
-function renderCarousel() {
-  carouselTrack.innerHTML = '';
-  const total = projects.length;
-  // Infinite loop indices
-  const leftIdx = (focusIndex - 1 + total) % total;
-  const centerIdx = focusIndex;
-  const rightIdx = (focusIndex + 1) % total;
-  const visible = [leftIdx, centerIdx, rightIdx];
-  visible.forEach((idx, i) => {
-    const project = projects[idx];
-    let cardClass = 'project-card';
-    if (i === 1) cardClass += ' focus';
-    else cardClass += ' blur';
-    const card = document.createElement('div');
-    card.className = cardClass;
-    card.onclick = () => {
-      if (i === 0) slideTo(-1);
-      if (i === 2) slideTo(1);
-    };
-    // Media
-    const media = document.createElement('div');
-    media.className = 'project-media';
-    if (project.type === 'image') {
-      const img = document.createElement('img');
-      img.src = project.src;
-      img.alt = project.title;
-      img.style.width = '100%';
-      img.style.height = '100%';
-      img.style.objectFit = 'contain';
-      media.appendChild(img);
-    } else if (project.type === 'video') {
-      const video = document.createElement('video');
-      video.src = project.src;
-      video.style.width = '100%';
-      video.style.height = '100%';
-      video.style.objectFit = 'contain';
-      video.loop = true;
-      video.muted = true;
-      if (i === 1) video.play();
-      else { video.pause(); video.currentTime = 0; }
-      media.appendChild(video);
-    }
-    card.appendChild(media);
-    // Title
-    const title = document.createElement('div');
-    title.className = 'project-title';
-    title.textContent = project.title;
-    card.appendChild(title);
-    // Description
-    const desc = document.createElement('div');
-    desc.className = 'project-desc';
-    desc.textContent = project.desc;
-    card.appendChild(desc);
-    // Github button with logo and hover text
-    if (project.github) {
-      const githubBtn = document.createElement('a');
-      githubBtn.className = 'github-btn';
-      githubBtn.href = project.github;
-      githubBtn.target = '_blank';
-      githubBtn.rel = 'noopener';
-      // Logo
-      const githubLogo = document.createElement('img');
-      githubLogo.src = 'https://cdn-icons-png.flaticon.com/256/25/25231.png';
-      githubLogo.alt = 'GitHub';
-      githubLogo.className = 'github-logo';
-      githubBtn.appendChild(githubLogo);
-      // Hover text
-      const githubText = document.createElement('span');
-      githubText.className = 'github-btn-text';
-      githubText.textContent = 'Go to Github Repository';
-      githubBtn.appendChild(githubText);
-      card.appendChild(githubBtn);
-    }
-    
-    // Add mobile navigation buttons
-    const mobileNavButtons = document.createElement('div');
-    mobileNavButtons.className = 'mobile-nav-buttons';
-    
-    const prevBtn = document.createElement('button');
-    prevBtn.className = 'carousel-btn left';
-    prevBtn.innerHTML = '<span class="arrow left-arrow"></span>';
-    prevBtn.onclick = (e) => {
-      e.stopPropagation();
-      slideTo(-1);
-    };
-    
-    const nextBtn = document.createElement('button');
-    nextBtn.className = 'carousel-btn right';
-    nextBtn.innerHTML = '<span class="arrow right-arrow"></span>';
-    nextBtn.onclick = (e) => {
-      e.stopPropagation();
-      slideTo(1);
-    };
-    
-    mobileNavButtons.appendChild(prevBtn);
-    mobileNavButtons.appendChild(nextBtn);
-    card.appendChild(mobileNavButtons);
-    
-    carouselTrack.appendChild(card);
-  });
-}
-
-function slideTo(offset) {
-  const total = projects.length;
-  focusIndex = (focusIndex + offset + total) % total;
-  renderCarousel();
-}
-
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-if (prevBtn && nextBtn) {
-  prevBtn.onclick = () => {
-    slideTo(-1);
-  };
-  nextBtn.onclick = () => {
-    slideTo(1);
-  };
-}
-
-// Smooth scroll for sticky section buttons (if not already handled by browser)
-document.querySelectorAll('.sticky-btn').forEach(btn => {
-  btn.addEventListener('click', function(e) {
-    const targetId = btn.textContent.trim().toLowerCase();
-    const section = document.getElementById(targetId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
-
-// Scroll-triggered fade-slide-up animation
-function onScrollFadeIn() {
-  document.querySelectorAll('.fade-slide-up').forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 60 && rect.bottom > 60) {
-      el.classList.add('visible');
-    } else {
-      el.classList.remove('visible');
-    }
-  });
-}
-window.addEventListener('scroll', onScrollFadeIn);
-window.addEventListener('DOMContentLoaded', onScrollFadeIn);
-
-// Message Modal logic
-const openMsgBtn = document.getElementById('openMessageModal');
-const closeMsgBtn = document.getElementById('closeMessageModal');
-const msgModal = document.getElementById('messageModal');
-const msgForm = document.getElementById('messageForm');
-
-if (openMsgBtn && closeMsgBtn && msgModal && msgForm) {
-  openMsgBtn.onclick = () => { msgModal.style.display = 'flex'; };
-  closeMsgBtn.onclick = () => { msgModal.style.display = 'none'; };
-  window.addEventListener('keydown', e => { if (e.key === 'Escape') msgModal.style.display = 'none'; });
-  msgModal.addEventListener('click', e => { if (e.target === msgModal) msgModal.style.display = 'none'; });
-  msgForm.onsubmit = function(e) {
-    e.preventDefault();
-    const from = document.getElementById('fromEmail').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    const mailto = `mailto:clarencecaluag@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('From: ' + from + '\n\n' + message)}`;
-    window.open(mailto, '_blank');
-    msgModal.style.display = 'none';
-    msgForm.reset();
-  };
-}
-
-// Initial render of carousel after DOM is ready
-window.addEventListener('DOMContentLoaded', renderCarousel);
-
-// Hamburger menu for mobile nav
-window.addEventListener('DOMContentLoaded', function() {
-  const hamburgerBtn = document.getElementById('hamburgerBtn');
-  const navLinks = document.getElementById('navLinks');
-  if (hamburgerBtn && navLinks) {
-    // Show hamburger only on mobile
-    function handleResize() {
-      if (window.innerWidth <= 700) {
-        hamburgerBtn.style.display = 'block';
-        navLinks.classList.remove('open');
-      } else {
-        hamburgerBtn.style.display = 'none';
-        navLinks.classList.remove('open');
-      }
-    }
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    hamburgerBtn.addEventListener('click', function(e) {
-      navLinks.classList.toggle('open');
+  if (toggle && nav) {
+    toggle.addEventListener("click", function () {
+      var isOpen = nav.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
-    // Optional: close nav on link click (mobile)
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 700) navLinks.classList.remove('open');
+  }
+
+  /* ------------------------------------------------------------------
+     Cover image: scrollable/pannable directly on the page, no click
+     needed first. Trackpad and touch scroll it natively since the
+     container just uses normal overflow; this adds click-and-drag
+     support for mouse users. A drag is not treated as a click, so it
+     will not also pop open the lightbox below.
+     ------------------------------------------------------------------ */
+  document.querySelectorAll(".detail-cover").forEach(function (cover) {
+    var isDown = false;
+    var dragged = false;
+    var startX, startY, scrollLeft, scrollTop;
+
+    cover.scrollTop = 0;
+    cover.scrollLeft = 0;
+
+    var coverImg = cover.querySelector("img");
+    if (coverImg) {
+      coverImg.addEventListener("load", function () {
+        cover.scrollTop = 0;
+        cover.scrollLeft = 0;
+      });
+    }
+
+    cover.addEventListener("mousedown", function (e) {
+      isDown = true;
+      dragged = false;
+      cover.classList.add("is-panning");
+      startX = e.pageX;
+      startY = e.pageY;
+      scrollLeft = cover.scrollLeft;
+      scrollTop = cover.scrollTop;
+    });
+
+    window.addEventListener("mouseup", function () {
+      isDown = false;
+      cover.classList.remove("is-panning");
+    });
+
+    window.addEventListener("mousemove", function (e) {
+      if (!isDown) return;
+      var dx = e.pageX - startX;
+      var dy = e.pageY - startY;
+      if (Math.abs(dx) > 4 || Math.abs(dy) > 4) dragged = true;
+      cover.scrollLeft = scrollLeft - dx;
+      cover.scrollTop = scrollTop - dy;
+    });
+
+    cover.addEventListener("click", function (e) {
+      if (dragged) {
+        e.stopPropagation();
+        dragged = false;
+      }
+    });
+  });
+
+  /* ------------------------------------------------------------------
+     Lightbox: click any real image inside an .artboard to view it
+     large, click again to zoom in and scroll around, click the
+     backdrop or press Escape to close. Placeholder boxes (no <img>
+     inside) are not clickable.
+     ------------------------------------------------------------------ */
+  var overlay = document.createElement("div");
+  overlay.className = "lightbox";
+  overlay.setAttribute("aria-hidden", "true");
+  overlay.innerHTML =
+    '<button type="button" class="lightbox-close" aria-label="Close image">' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>' +
+    "</button>" +
+    '<p class="lightbox-hint">Click the image to zoom in</p>' +
+    '<div class="lightbox-frame"><img class="lightbox-img" src="" alt=""></div>';
+
+  document.body.appendChild(overlay);
+
+  var lightboxImg = overlay.querySelector(".lightbox-img");
+  var closeBtn = overlay.querySelector(".lightbox-close");
+
+  function openLightbox(src, alt) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || "";
+    lightboxImg.classList.remove("is-zoomed");
+    overlay.classList.add("is-open");
+    overlay.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox() {
+    overlay.classList.remove("is-open");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    lightboxImg.classList.remove("is-zoomed");
+    lightboxImg.src = "";
+  }
+
+  /* Delegate so it also works on images rendered dynamically
+     (works grid, home featured work, work detail page). */
+  document.addEventListener("click", function (e) {
+    var img = e.target.closest(".artboard.is-zoomable img");
+    if (!img) return;
+    e.preventDefault();
+    openLightbox(img.src, img.alt);
+  });
+
+  lightboxImg.addEventListener("click", function () {
+    lightboxImg.classList.toggle("is-zoomed");
+  });
+
+  closeBtn.addEventListener("click", closeLightbox);
+
+  overlay.addEventListener("click", function (e) {
+    if (e.target === overlay) closeLightbox();
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && overlay.classList.contains("is-open")) {
+      closeLightbox();
+    }
+  });
+
+  /* ------------------------------------------------------------------
+     Works page filter (only runs if the filter row exists, works
+     whether cards are static or rendered from PROJECTS).
+     ------------------------------------------------------------------ */
+  var filterRow = document.querySelector(".filter-row");
+  if (filterRow) {
+    filterRow.addEventListener("click", function (e) {
+      var btn = e.target.closest(".filter-btn");
+      if (!btn) return;
+
+      var category = btn.getAttribute("data-filter");
+      filterRow.querySelectorAll(".filter-btn").forEach(function (b) {
+        b.classList.remove("is-active");
+      });
+      btn.classList.add("is-active");
+
+      document.querySelectorAll(".work-item").forEach(function (item) {
+        var itemCategory = item.getAttribute("data-category");
+        item.hidden = !(category === "all" || itemCategory === category);
       });
     });
   }
-}); 
+});

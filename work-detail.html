@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Project | Your Name, Graphic Designer</title>
+<meta name="description" content="Case study for a graphic design project: creative ads, email design, or website UI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">Your<span>Name</span></a>
+    <nav aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="works.html" aria-current="page">Works</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="project-root">
+  <!-- Filled in by script below once the project is found. -->
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <p>&copy; 2026 Your Name. All work shown is original design.</p>
+    <ul class="footer-links">
+      <li><a href="about.html#contact">Contact</a></li>
+      <li><a href="works.html">Works</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="projects.js"></script>
+<script src="script.js"></script>
+<script>
+(function () {
+  var root = document.getElementById("project-root");
+  var params = new URLSearchParams(window.location.search);
+  var id = params.get("id");
+  var project = id ? findProjectById(id) : null;
+
+  if (!project) {
+    root.innerHTML =
+      '<section class="tight"><div class="container">' +
+        '<div class="section-head"><h2>Project not found</h2></div>' +
+        '<p style="max-width:60ch;">This page opens with a project id in the address bar, for example ' +
+        '<code>work-detail.html?id=ad-campaign-01</code>. Go back to the works page and click a project ' +
+        'to open its case study directly.</p>' +
+        '<a href="works.html" class="btn btn-primary">Back to works</a>' +
+      '</div></section>';
+    return;
+  }
+
+  document.getElementById("page-title").textContent = project.title + " | Your Name, Graphic Designer";
+
+  var html = '';
+
+  html += '<section class="tight"><div class="container detail-hero">';
+  html += '<p class="tag">' + project.category + '</p>';
+  html += '<h1 style="font-size:var(--step-3); margin-top:18px; max-width:20ch;">' + project.title + '</h1>';
+  html += '<p style="font-size:var(--step-0); max-width:60ch;">' + project.summary + '</p>';
+  html += '<div class="detail-meta-row">';
+  html += '<div><p class="label">Client</p><p class="value">' + project.client + '</p></div>';
+  html += '<div><p class="label">Category</p><p class="value">' + project.category + '</p></div>';
+  html += '<div><p class="label">Year</p><p class="value">' + project.year + '</p></div>';
+  html += '<div><p class="label">Deliverables</p><p class="value">' + project.deliverables + '</p></div>';
+  html += '</div>';
+  html += '<div class="detail-cover-slot"></div>';
+  html += '</div></section>';
+
+  html += '<section style="padding:0;"><div class="container detail-body">';
+  html += '<div><h2>Brief</h2><p>' + project.brief + '</p></div>';
+  html += '<div><h2>Approach</h2><p>' + project.approach + '</p></div>';
+  html += '</div></section>';
+
+  html += '<section><div class="container">';
+  html += '<div class="section-head"><h2>Final design</h2></div>';
+  html += '<div class="detail-gallery" id="detail-gallery"></div>';
+  html += '</div></section>';
+
+  html += '<div class="container"><div class="next-project">';
+  html += '<div><p class="label">More work</p><a href="works.html"><h3>Back to all work</h3></a></div>';
+  html += '<a href="works.html" class="btn btn-secondary">View works</a>';
+  html += '</div></div>';
+
+  root.innerHTML = html;
+
+  var coverSlot = root.querySelector(".detail-cover-slot");
+  coverSlot.appendChild(buildArtboard(project.cover, "detail-cover", true));
+
+  var gallery = document.getElementById("detail-gallery");
+  project.gallery.forEach(function (item) {
+    var art = buildArtboard(item, null, true);
+    if (item.full) {
+      var wrap = document.createElement("div");
+      wrap.className = "full";
+      wrap.appendChild(art);
+      gallery.appendChild(wrap);
+    } else {
+      gallery.appendChild(art);
+    }
+  });
+})();
+</script>
+</body>
+</html>

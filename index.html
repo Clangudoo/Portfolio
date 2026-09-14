@@ -1,212 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>C.R.C</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home | Your Name, Graphic Designer</title>
+<meta name="description" content="Graphic design portfolio: creative ads, email design, and website UI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <a class="logo" href="index.html">CRC</a>
-      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" style="display:none;">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#extracurriculars">Extracurriculars</a></li>
-        <li><a href="#contact">Contact</a></li>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">Your<span>Name</span></a>
+    <nav aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="works.html">Works</a></li>
       </ul>
     </nav>
-  </header>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
 
-  <main>
-    <section id="home" class="landing-section">
-      <div class="landing-bg"></div>
-      <div class="landing-content">
-        <div class="intro-text-container">
-          <h1 class="animated-intro">
-            <span id="intro-text"></span>
-          </h1>
-           <p class="intro-paragraph">
-             </p>
-          <p>
-          <p class="intro-paragraph">I’m a graphic designer and web developer.
-            I worked on projects to create visually engaging contents and functional websites. </p>
-          <p></p>
-          <p class="intro-paragraph">  
-            It's not just about gaining knowledge—it's about the thrill of excitement 
-            from every "woah!" moment. 
-            I'm always looking for ideas and love turning 
-            "what-ifs" into realities.</p>
+<main>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="hero-eyebrow fade-in">Graphic designer, based in Your City</p>
+        <h1 class="fade-in d1">Graphic design for ads, email, and web interfaces.</h1>
+        <p class="hero-lede fade-in d2">I plan, design, and hand off work that agencies and product teams can ship: campaign ads sized for the platform they run on, email templates that render properly in the inbox, and interface screens ready to build.</p>
+        <div class="hero-actions fade-in d3">
+          <a href="works.html" class="btn btn-primary">View the work</a>
+          <a href="about.html" class="btn btn-secondary">About me</a>
+        </div>
+        <div class="hero-meta fade-in d3">
+          <div>
+            <p class="label">Focus areas</p>
+            <p class="value">Ads, email, UI</p>
+          </div>
+          <div>
+            <p class="label">Based in</p>
+            <p class="value">Your City, Country</p>
+          </div>
+          <div>
+            <p class="label">Currently</p>
+            <p class="value">Open for freelance work</p>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section id="skills" class="skills-section fade-slide-up">
-      <header class="section-header fade-slide-up">Technical & Interpersonal Skills</header>
-      <div class="skills-card-row">
-        <article class="skills-card fade-slide-up">
-          <h2 class="skills-card-title">Front End</h2>
-          <div class="skills-logos">
-            <div class="skills-logo-col">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-              <span>HTML</span>
-            </div>
-            <div class="skills-logo-col">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
-              <span>CSS</span>
-            </div>
-            <div class="skills-logo-col">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-              <span>JavaScript</span>
-            </div>
-          </div>
-        </article>
-        <article class="skills-card fade-slide-up">
-          <h2 class="skills-card-title">Back End</h2>
-          <div class="skills-logos">
-            <div class="skills-logo-col">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
-              <span>PHP</span>
-            </div>
-            <div class="skills-logo-col">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
-              <span>Java</span>
-            </div>
-            <div class="skills-logo-col">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
-              <span>MySQL</span>
-            </div>
-          </div>
-        </article>
-        <article class="skills-card fade-slide-up">
-          <h2 class="skills-card-title">Mobile</h2>
-          <div class="skills-logos">
-            <div class="skills-logo-col">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio">
-              <span>Android Studio</span>
-            </div>
-          </div>
-        </article>
-      </div>
-      <div class="skills-card-row">
-          <article class="skills-card fade-slide-up">
-          <h2 class="skills-card-title">Productivity</h2>
-          <div class="skills-logos">
-            <div class="skills-logo-col">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROPBLdH42Y2y9bcFqaNryLFtlEm2oGE6b9Zg&s" alt="Canva">
-              <span>Canva</span>
-            </div>
-            <div class="skills-logo-col">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_mLHn9oPIci5YAFol3kocIxBuTsMOEvao-g&s" alt="Photoshop">
-              <span>Adobe Photoshop</span>
-            </div>
-            <div class="skills-logo-col">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlyf2x2w47ik4ClgaQtJ_qCaXF_Ru6JlUR0Q&s" alt="Figma">
-              <span>Figma</span>
-            </div>
-          </div>
-        </article>
-        <article class="skills-card fade-slide-up">
-          <h2 class="skills-card-title">Productivity</h2>
-          <div class="skills-logos">
-            <div class="skills-logo-col">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Workspace">
-              <span>Google Workspace</span>
-            </div>
-            <div class="skills-logo-col">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Microsoft_365_%282022%29.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="MS 365">
-              <span>MS 365</span>
-            </div>
-            <div class="skills-logo-col">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg" alt="After Effects">
-              <span>After Effects</span>
-            </div>
-          </div>
-        </article>
-        <article class="skills-card fade-slide-up">
-          <h2 class="skills-card-title">Game Dev</h2>
-          <div class="skills-logos">
-            <div class="skills-logo-col">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/godot/godot-original.svg" alt="Godot">
-              <span>Godot</span>
-            </div>
-            <div class="skills-logo-col">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/godot/godot-original.svg" alt="GDScript">
-              <span>GDScript</span>
-            </div>
-          </div>
-        </article>
-      </div>
-      <div class="interpersonal-row fade-slide-up">
-        <span class="interpersonal-skill">Problem Solving</span>
-        <span class="interpersonal-skill">Fast Learner</span>
-        <span class="interpersonal-skill">Communication</span>
-        <span class="interpersonal-skill">Openness to Feedback</span>
-        <span class="interpersonal-skill">Patience</span>
-        <span class="interpersonal-skill">Adaptability</span>
-        <span class="interpersonal-skill">Time Management</span>
-      </div>
-    </section>
-
-    <section id="projects" class="projects-section fade-slide-up">
-      <header class="section-header fade-slide-up">Projects</header>
-      <div class="carousel-container fade-slide-up">
-        <button class="carousel-btn left" id="prevBtn">
-          <span class="arrow left-arrow"></span>
-        </button>
-        <div class="carousel-track" id="carouselTrack">
-          <!-- Project cards will show dito -->
+      <div class="artboard hero-art is-zoomable fade-in d2">
+        <span class="artboard-tag">Featured_Ad_01.png</span>
+        <div class="artboard-label">
+          <strong>Insert design here</strong>
+          Recommended size: 1200 × 1500px
         </div>
-        <button class="carousel-btn right" id="nextBtn">
-          <span class="arrow right-arrow"></span>
-        </button>
       </div>
-    </section>
-
-    <section class="extracurriculars-section fade-slide-up" id="extracurriculars">
-      <header class="section-header fade-slide-up">Extracurriculars</header>
-      <div class="extracurriculars-list">
-        <article class="extracurricular-card fade-slide-up">
-          <div class="extracurricular-image"><img src="vid/Extracurriculars/Extra1_img.png" alt="Extracurricular 1" style="width:100%;height:100%;object-fit:cover;opacity:0.7;" autoplay loop muted playsinline></img></div>
-          <h3 class="extracurricular-title">TRANGKASO Infographics Audio-Visual Department (2024 - 2025)</h3>
-          <p class="extracurricular-desc">2-page Infographic about rising case of Trangkaso (flu) and ways to prevent it. Created using Canva and AV Department branding.</p>
-        </article>
-        <article class="extracurricular-card fade-slide-up">
-          <div class="extracurricular-image"><video src="vid/Extracurriculars/Extra2_vid.mp4" alt="Extracurricular 2" style="width:100%;height:100%;object-fit:cover;opacity:0.7;" autoplay loop muted playsinline></video></div>
-          <h3 class="extracurricular-title">Animated Lyric Video</h3>
-          <p class="extracurricular-desc">Created animation using Adobe After Effects to bring stories and concepts to life through motion graphics.</p>
-        </article>
-        <article class="extracurricular-card fade-slide-up">
-          <div class="extracurricular-image"><video src="vid/Extracurriculars/Extra3_vid.mp4" alt="Extracurricular 3" style="width:100%;height:100%;object-fit:cover;opacity:0.7;" autoplay loop muted playsinline></video></div>
-          <h3 class="extracurricular-title">Frame-by-frame animation</h3>
-          <p class="extracurricular-desc">Designed the character using Ibispaint and animated a custom face using Capcut, focusing on frame by frame animation.</p>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer id="contact" class="footer">
-    <div class="footer-content">
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/in/clarence-caluag/" target="_blank" rel="noopener" title="LinkedIn" style="display:flex;align-items:center;gap:0.3rem;">
-          <img src="img/Logos/linkedin_icon.png" alt="LinkedIn" class="footer-icon" width="20" height="20" />
-          LinkedIn
-        </a>
-        <span title="Address" style="display:flex;align-items:center;gap:0.3rem;">
-          <img src="img/Logos/address_icon.png" alt="Address" class="footer-icon" width="20" height="20" />
-          Malolos, Bulacan
-        </span>
-      </div>
-      <div class="footer-copyright">&copy; 2026 Clarence C. All rights reserved.</div>
     </div>
-  </footer>
-  <script src="script.js"></script>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="section-head">
+        <h2>What I design</h2>
+      </div>
+      <div class="capability-list">
+        <div class="capability">
+          <h3>Creative ads</h3>
+          <p>Static and carousel ad sets for social and display, built to spec for the platform they run on.</p>
+        </div>
+        <div class="capability">
+          <h3>Email design</h3>
+          <p>Marketing and lifecycle emails designed to hold their layout across inbox clients and screen sizes.</p>
+        </div>
+        <div class="capability">
+          <h3>Website UI</h3>
+          <p>Page layouts and component screens for marketing sites and product interfaces, ready for a developer to build.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>Selected work</h2>
+        <a href="works.html" class="btn btn-secondary">See all work</a>
+      </div>
+
+      <div class="work-grid" id="featured-grid">
+        <!-- Filled in by script below from PROJECTS -->
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container contact-panel">
+      <div class="section-head">
+        <h2>Get in touch</h2>
+      </div>
+      <p>Have a project in mind or want to see the full portfolio? Reach out directly or head to the about page for full contact details.</p>
+      <div class="hero-actions">
+        <a href="about.html#contact" class="btn btn-primary">Contact details</a>
+        <a href="mailto:your.email@example.com" class="btn btn-secondary">Email me</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <p>&copy; 2026 Your Name. All work shown is original design.</p>
+    <ul class="footer-links">
+      <li><a href="about.html#contact">Contact</a></li>
+      <li><a href="works.html">Works</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="projects.js"></script>
+<script src="script.js"></script>
+<script>
+(function () {
+  var grid = document.getElementById("featured-grid");
+
+  FEATURED_PROJECT_IDS.forEach(function (id) {
+    var project = findProjectById(id);
+    if (!project) return;
+
+    var card = document.createElement("a");
+    card.href = "work-detail.html?id=" + encodeURIComponent(project.id);
+    card.className = "work-card";
+
+    card.appendChild(buildArtboard(project.cover));
+
+    var meta = document.createElement("div");
+    meta.className = "work-card-meta";
+    meta.innerHTML = "<h3>" + project.title + "</h3><span class=\"work-cat\">" + project.category + "</span>";
+    card.appendChild(meta);
+
+    var summary = document.createElement("p");
+    summary.textContent = project.summary;
+    card.appendChild(summary);
+
+    grid.appendChild(card);
+  });
+})();
+</script>
 </body>
 </html>
