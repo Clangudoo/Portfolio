@@ -146,7 +146,7 @@ const PROJECTS = [
   },
   {
     id: "email-series-02",
-    title: "Spec Email 2 - The Body Shop",
+    title: "Spec Email 1 - The Body Shop",
     category: "Email design",
     categoryFilter: "email",
     client: "Client name",
@@ -154,15 +154,15 @@ const PROJECTS = [
     deliverables: "3-part email series",
     brief: "Describe the brief here: who the audience was, what the emails needed to communicate, and any platform constraints (Klaviyo, Mailchimp, and so on).",
     approach: "Explain the layout and type decisions, and how the design was tested to hold up across inbox clients and screen widths.",
-    cover: { src: "Images/Email 3.png", alt: "", tag: "Email_Series_01.jpg", size: "1200 x 1600px" },
+    cover: { src: "Images/Email 2.png", alt: "", tag: "Email_Series_01.jpg", size: "1200 x 1600px" },
     gallery: [
-      { src: "Images/Email 3.png", alt: "", tag: "Email_Detail_01.jpg", size: "1200 x 900px" },
+      { src: "Images/Email 2.png", alt: "", tag: "Email_Detail_01.jpg", size: "1200 x 900px" },
       { src: "", alt: "", tag: "Email_Detail_02.jpg", size: "1200 x 900px" }
     ]
   },
     {
     id: "email-series-03",
-    title: "Spec Email 3 - Onnit",
+    title: "Spec Email 2 - Onnit",
     category: "Email design",
     categoryFilter: "email",
     client: "Client name",
@@ -178,7 +178,7 @@ const PROJECTS = [
   },
       {
     id: "email-series-04",
-    title: "Spec Email 4 - Bearpaw",
+    title: "Spec Email 3 - Bearpaw",
     category: "Email design",
     categoryFilter: "email",
     client: "Client name",
